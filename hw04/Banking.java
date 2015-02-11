@@ -13,7 +13,7 @@ to get */
 import java.util.Scanner;
 //
 //define a class
-    public class Cookies {
+    public class Banking {
         
         //define a method
         public static void main (String [] args) {
