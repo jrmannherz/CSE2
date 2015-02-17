@@ -2,13 +2,12 @@
 //James Mannherz
 //CSE 002
 //2/6/16
-//Lab 04
-//Cookies
-/*Purpose Write a program that uses the Scanner class 
-to obtain from users how many cookies they want, 
-how many people they are buying for, 
-and at least how many cookies they want each person 
-to get */ 
+//hw 04
+//Which Number
+/*Purpose: prompts the user to think of an int 
+between 1 and 10 inclusive. Then the program proceeds 
+to ask the user questions in an attempt to guess what 
+number the user is thinking of.  */ 
 //import scanner
 import java.util.Scanner;
 //
@@ -17,92 +16,128 @@ import java.util.Scanner;
         
         //define a method
         public static void main (String [] args) {
+        
+            //prompt user to think of a number
+            System.out.println ("Think of a number between 1 and 10 inclusive");
             
-        //Define scanner type
-        Scanner myScanner;
-        
-        //assign myScanner
-        myScanner = new Scanner( System.in );
-        
-            //prompt user for number of people
-            System.out.print ("Enter the number of People: ");
-            //accept user input as 
-                if (myScanner.hasNextInt()){
-                //define variable for my scanner input
-                int nPeople = myScanner.nextInt();
-                    //check if int is greater than 0
-                    if (nPeople>0){
+                //Define scanner type
+                Scanner myScanner;
+                //assign myScanner
+                myScanner = new Scanner( System.in );
+                    //First Guess
+                    System.out.println("Is the number even?(Please enter y/Y or n/N): ");
                     
-                        //prompt user for number of cookies
-                        System.out.print ("Enter the number of Cookies you are making: ");
-                        if (myScanner.hasNextInt()){
-                                //define variable for cookies made
-                                int nCookies = myScanner.nextInt();
-                                    if(nCookies>0) {
-                                        //prompt user for number of cookies per person
-                                         System.out.print ("Enter the number of Cookies you want each person to have: ");
-                                                //define variable for cookies made
-                                                int nCookiesperPerson = myScanner.nextInt();
-                                                    if(nCookiesperPerson>=0){
-                                                        if(nCookies % nPeople == 0){
-                                                            System.out.println("You have enough cookies for each person and they will get an even amount");
-                                                            
-                    
-                                                            
-                                                        }//end if statement for cookies evenly distrubuted
-                                                        else{
-                                                            System.out.println("You have enough cookies, but they will not divide evenly");
-                                                            return; //leave program
-                                                        }//end else statement for even distribution
+                        String a = myScanner.next(); // Read Input for keyboard
+                        
+                        if(a.equals ("y") || a.equals ("Y")){
+                            System.out.println("Is it divisible by 3?: ");
+                                a= myScanner.next(); // Read Input for keyboard
+                                    if(a.equals ("y") || a.equals ("Y")){
+                                        System.out.println("Your number is 6!");
+                                    }    
+                                    else if(a.equals ("n") || a.equals ("N")){
+                                        System.out.println("Is it divisible by 4?: ");
+                                        a= myScanner.next(); // Read Input for keyboard
+                                            if(a.equals ("y") || a.equals ("Y")){
+                                             System.out.println("Is the number divisible by 4 greater than 1?:");
+                                             a= myScanner.next(); // Read Input for keyboard
+                                                if(a.equals ("y") || a.equals ("Y")){
+                                                System.out.println("Your number is 8!");
+                                                }
+                                                else if(a.equals ("n") || a.equals ("N")){
+                                                System.out.println("Your number is 4!");
+                                                }
+                                                else{
+                                                System.out.println("Incorrect Input Program Terminated");
+                                                return; }     
+                                                }
+                                        
+                                                        
+                                                
+                                            else if(a.equals ("n") || a.equals ("N")){
+                                                    System.out.println("Is it divisible by 5?: ");
+                                                     a= myScanner.next(); // Read Input for keyboard
+                                                    if(a.equals ("y") || a.equals ("Y")){
+                                                        System.out.println("Your number is 10!");
+                                                        }
+                                                    else if(a.equals ("n") || a.equals ("N")){
+                                                        System.out.println("Your number is 2!");
+                                                        }
+                                                    else{
+                                                        System.out.println("Incorrect Input Program Terminated");
+                                                        return; }     
+                                            }
+                                            else{ System.out.println("Incorrect Input Program Terminated");
+                                            return; }          
+                                    }                    
+                                                        
+                                    else{
+                                        System.out.println("Incorrect Input Program Terminated");
+                                        return; }        
                                                         
                                                     
-                                                    }//end if statement cookies per person
-                                                    else{//if the user entered an int that is not greater than zero
-                                                    System.out.println("You entered a negative amount of cookies");
-                                                    return; //leave program
-                                                        
-                                                    }//end else statement for number of cookies
-                                        
-                                            
-                                        
-                                        
-                                    }//close cookies made if statement
+                                                    
+                                    
+                                             
+                                             
+                                 
+                                
+                            
+                            
+                        }
+                        
+                        else if(a.equals ("n") || a.equals ("N")){
+                            System.out.println("Is it divisible by 3?: ");
+                            a= myScanner.next(); // Read Input for keyboard
+                            if(a.equals ("y") || a.equals ("Y")){
+                                System.out.println("When divided by 3 is the result greater than 1?: ");
+                                a= myScanner.next(); // Read Input for keyboard
+                                    if(a.equals ("y") || a.equals ("Y")){
+                                     System.out.println("Your Number is 9");
+                                    }
+                                    else if(a.equals ("n") || a.equals ("N")){
+                                        System.out.println("Your Number is 3");
+                                    }
                                     else{
-                                        //if the user entered an int that is not greater than zero
-                                        System.out.println("You entered a negative amount of cookies");
-                                        return; //leave program
-                                    }//close else statement
-                    
-                        }//close if statement for cookies made
-                        else {
-                            //if user did not enter a int
-                            System.out.println("You did not enter an int");
-                             return; //leave program
-                            }// close else statement for cookies made
+                                        System.out.println("Incorrect Input Program Terminated");
+                                    return;}
+                            }
+                            else if(a.equals ("n") || a.equals ("N")){
+                                System.out.println("is it greater than 6?: ");
+                                a= myScanner.next(); // Read Input for keyboard
+                                    if (a.equals ("y") || a.equals ("Y")){
+                                        System.out.println("Your number is 7!");
+                                    }
+                                    else if(a.equals ("n") || a.equals ("N")){
+                                        System.out.println("Is it less than 3?: ");
+                                        a= myScanner.next(); // Read Input for keyboard
+                                        if (a.equals ("y") || a.equals ("Y")){
+                                            System.out.println("Your number is 1!");}
+                                        else if(a.equals ("n") || a.equals ("N")){
+                                            System.out.println("Your number is 5!");}
+                                        else { System.out.println("Incorrect Input Program Terminated");
+                                        return;}   
+                                            
+                                    }
+                            
+                                    else {System.out.println("Incorrect Input Program Terminated");
+                                         return;}  
+                                         
+                            }
+                            else{System.out.println("Incorrect Input Program Terminated");
+                                        return;}
+                        }
+                                        
+                                    
+                            
                         
                         
-               
-                
-                
-                
-                
-                    }                
-                    else{ 
-                    //if the user entered an int that is not greater than zero
-                    System.out.println("You entered a incorrect amount of people");
-                    return; //leave program
-                    }//close else statement
+                        else{
+                            System.out.println("Incorrect Input Program Terminated");
+                            return;
+                        }
+        }//close class
+    }//close method
                     
-                } //Close If Statement for non int
-                else{ 
-                    //if user did not enter a int
-                    System.out.println("You did not enter an int");
-                    return; //leave program
-                }// close else statement for non int
-                
                     
-                
-                
-        } // end of method
-    } //end of method
-    
+                    

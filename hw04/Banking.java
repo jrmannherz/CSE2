@@ -1,108 +1,84 @@
 //
 //James Mannherz
 //CSE 002
-//2/6/16
-//Lab 04
-//Cookies
-/*Purpose Write a program that uses the Scanner class 
-to obtain from users how many cookies they want, 
-how many people they are buying for, 
-and at least how many cookies they want each person 
-to get */ 
+//2/14/16
+//hw 04
+//Banking
+/*Purpose Write a program using switch statements 
+that allows users to process banking transactions. */ 
 //import scanner
 import java.util.Scanner;
+import java.lang.Math;
 //
 //define a class
     public class Banking {
         
         //define a method
         public static void main (String [] args) {
+                //initial Starting amount in Bank Account        
+            int iAccount = (int) (Math.random() *(5000-1000))+ 1000;
             
-        //Define scanner type
-        Scanner myScanner;
+                //Define scanner type
+                Scanner myScanner;
         
-        //assign myScanner
-        myScanner = new Scanner( System.in );
-        
-            //prompt user for number of people
-            System.out.print ("Enter the number of People: ");
-            //accept user input as 
-                if (myScanner.hasNextInt()){
-                //define variable for my scanner input
-                int nPeople = myScanner.nextInt();
-                    //check if int is greater than 0
-                    if (nPeople>0){
-                    
-                        //prompt user for number of cookies
-                        System.out.print ("Enter the number of Cookies you are making: ");
-                        if (myScanner.hasNextInt()){
-                                //define variable for cookies made
-                                int nCookies = myScanner.nextInt();
-                                    if(nCookies>0) {
-                                        //prompt user for number of cookies per person
-                                         System.out.print ("Enter the number of Cookies you want each person to have: ");
-                                                //define variable for cookies made
-                                                int nCookiesperPerson = myScanner.nextInt();
-                                                    if(nCookiesperPerson>=0){
-                                                        if(nCookies % nPeople == 0){
-                                                            System.out.println("You have enough cookies for each person and they will get an even amount");
-                                                            
-                    
-                                                            
-                                                        }//end if statement for cookies evenly distrubuted
-                                                        else{
-                                                            System.out.println("You have enough cookies, but they will not divide evenly");
-                                                            return; //leave program
-                                                        }//end else statement for even distribution
-                                                        
-                                                    
-                                                    }//end if statement cookies per person
-                                                    else{//if the user entered an int that is not greater than zero
-                                                    System.out.println("You entered a negative amount of cookies");
-                                                    return; //leave program
-                                                        
-                                                    }//end else statement for number of cookies
-                                        
-                                            
-                                        
-                                        
-                                    }//close cookies made if statement
-                                    else{
-                                        //if the user entered an int that is not greater than zero
-                                        System.out.println("You entered a negative amount of cookies");
-                                        return; //leave program
-                                    }//close else statement
-                    
-                        }//close if statement for cookies made
+                //assign myScanner
+                myScanner = new Scanner( System.in );
+                
+                System.out.println("Would You like to deposit money, withdraw money, or view your balance?(Please enter 1 for deposit, 2 for withdraw, and 3 for view: ");
+                
+                
+            if(myScanner.hasNextInt()){
+                
+                int b = myScanner.nextInt(); // Read Input for keyboard
+            
+                if(b == 1 || b == 2 || b == 3){ 
+                
+                switch (b) {
+                    case 1:
+                        System.out.println("How much would you like to deposit?: ");
+                        
+                        b = myScanner.nextInt(); // Read Input for keyboard
+                        if (b>=0){
+                            int balance = b + iAccount;
+                            
+                            System.out.println("Your balance is now $" +balance);
+                        }
                         else {
-                            //if user did not enter a int
-                            System.out.println("You did not enter an int");
-                             return; //leave program
-                            }// close else statement for cookies made
+                            System.out.println("You cannot deposit a negative amount");
+                        }
                         
                         
-               
-                
-                
-                
-                
-                    }                
-                    else{ 
-                    //if the user entered an int that is not greater than zero
-                    System.out.println("You entered a incorrect amount of people");
-                    return; //leave program
-                    }//close else statement
+                        break;
+                    case 2:
+                        System.out.println("How much would you like to withdraw?: ");
+                        
+                        b = myScanner.nextInt(); // Read Input for keyboard
                     
-                } //Close If Statement for non int
-                else{ 
-                    //if user did not enter a int
-                    System.out.println("You did not enter an int");
-                    return; //leave program
-                }// close else statement for non int
+                        if (b > iAccount || b < 0){
+                            System.out.println("You cannot withdraw that amount.");
+                        }
+                        else if(b <= iAccount && b >= 0){
+                            int c = iAccount - b;
+                            
+                            System.out.println("Your remaining balance is $" +c);
+                        }
+                        
+                        break;
+                        
+                    case 3:
+                        System.out.println("Your balance is $" +iAccount);
+                        break;
+                        }// close switch  
+                }        
+                else{ System.out.println("You did not enter an acceptible value.");
+                }
+            }
+            else{ System.out.println("Please enter an integer");}
+            
                 
-                    
+                            
+                        }//close class
                 
-                
-        } // end of method
-    } //end of method
-    
+                }//close method
+        
+           
