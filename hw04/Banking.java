@@ -75,6 +75,8 @@ import java.lang.Math;
             }
             else{ System.out.println("Please enter an integer");}
             
+            
+            System.out.println("The decimal numbers are R:"+u+v+", G:"+w+x+", B:"+y+z);
                 
                             
                         }//close class
