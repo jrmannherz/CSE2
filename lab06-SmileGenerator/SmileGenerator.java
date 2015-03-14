@@ -15,66 +15,19 @@ public class SmileGenerator {
     public static void main (String[] args){
         String smile = ":)";
         int a = 1;
+        int j = 0;
 
-/*for (a = 1;a < 6;a=a+1){
-    System.out.print(smile);
-    
-}//for 
 
-while (a<6){
-    System.out.print(smile);
-    if (a < 6){
-        a=a+1;
-    }//if statement
-}//while 
-
-do {
-    System.out.print(smile);
-    if (a <6){
-        a=a+1;
-    }//if statement
-}while (a < 6); */
 
 int x = (int) (Math.random()*99+1); //set up variable
 
-
-/*for (a = 1; a < x;a=a+1){
-    System.out.print(smile);
-    
-}//for loop */
-
-
-
-/*
-while(a < x){
-    a++;
-    System.out.print(smile);
-    if(a%30 == 0){
-    System.out.println(smile);} //print new line after 30
-    else {}//else
-    
-}
-
-
-
-while (a < x){
-    System.out.print(smile);
-    if (limit = 30){
-        
-        
-    }
-}
-
-
-
-for (a = 1; a <= x; a++){
-    for(int col =1; col <=a-1 ; col++){
-        System.out.print(smile);
-    }
+for(a = 1;a < x;a++){
+    for(j=1;j<a;j++){
     System.out.println(smile);
+    }
 }
 
-*/
+
 
     }//close method
 }//close class
