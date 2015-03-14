@@ -16,16 +16,17 @@ public class SmileGenerator {
         String smile = ":)";
         int a = 1;
         int j = 0;
+        String temp = "";
 
 
 
 int x = (int) (Math.random()*99+1); //set up variable
 
-for(a = 1;a < x;a++){
-    for(j=1;j<a;j++){
-    System.out.println(smile);
-    }
+for(a=0;a<x;a++){
+    temp = temp + smile;
+    System.out.println(temp);
 }
+
 
 
 
