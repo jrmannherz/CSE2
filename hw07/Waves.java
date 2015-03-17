@@ -47,7 +47,7 @@ public class Waves { //open a class
             }//end else statement
             }//close while loop
             
-        System.out.println("For Loop");
+        System.out.println("For Loop ");
                    for(x=1; x<=a;x++){
                         if(x%2==0){
                             for (c = 1; c <= x; c++){        
@@ -66,7 +66,7 @@ public class Waves { //open a class
                    }//close the big for loop 
                    
                    
-        System.out.println("While Loop");
+        System.out.println("While Loop ");
                     x=1;
                     while(x<=a){
                         c=1;
