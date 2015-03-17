@@ -10,10 +10,10 @@ inclusive, and then prints out displays that depend on the value entered
 and look like the following:
   */
 
-import java.util.Scanner;
+import java.util.Scanner; //import java
 
-public class Waves {
-    public static void main (String[] args){
+public class Waves { //open a class
+    public static void main (String[] args){ //open a method
         
         Scanner myScanner = new Scanner(System.in); //initialize scanner variable 
         int a = 0;//initialize variable a
@@ -30,12 +30,12 @@ public class Waves {
         System.out.print("Please enter a number between 1 and 30: ");//prompt user for number
          while(!valid){
             if(myScanner.hasNextInt()){
-            T = myScanner.nextInt();
-                if(T < 30  && T > 1){
+            T = myScanner.nextInt(); //throw away variable
+                if(T < 30  && T > 1){ //test if valid input
                     valid = true;  
                     a = T;    
                 }// end of if statement
-                else{
+                else{   
                     b = T;
                     System.out.println("Incorrect input, try again:");
                     }//end else statement
