@@ -23,6 +23,10 @@ public class zigzag {
         int nStars=0;
         String t;//initialize throw away variable t
         boolean valid = false;//initialize boolean valid
+        boolean whole = true;
+        String L = "";
+        
+        while(whole){
         
         
         System.out.print("Please enter a number between 3 and 33: ");//prompt user for number
@@ -62,7 +66,19 @@ public class zigzag {
       for(l=0; l < nStars; l++){
             System.out.print(temp);
         }
-     
+        
+        System.out.println("Enter y or Y to go again: ");
+        L = myScanner.next();
+        if(L.equals ("y") || L.equals ("Y")){
+            whole = true;
+            valid = false;
+        }//close if statement
+        else{
+            whole = false;
+        }//close the else statement
+        
+        
+        }//close whole while loop
      
  
         

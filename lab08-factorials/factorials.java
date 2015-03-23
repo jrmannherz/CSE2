@@ -13,7 +13,7 @@ Provide the code for the three methods.
 
 import java.util.Scanner;
 
-class factorials{
+public class factorials{
 
 public static void main (String [] args){
              
@@ -21,22 +21,32 @@ public static void main (String [] args){
     System.out.print("Please enter an positive interger: ");
     int input = 0;
     input = myScanner.nextInt();
-    factorial(input); 
+    int sum = 0;
+    int x = 0;
+    for(x=1; x <= input; x++){
+    sum += factorial(x);}
+    
+    print(sum);
+    
 
     }//close main method       
     
+    
      
-    public int factorial(int input){
+    public static int factorial(int input){
     int fact = 1;
     int c;
     for(c = 1; c <= input ; c++){
         fact = fact * c;
     }
     
+   
     return fact;
     }//close factorial method 
     
-        public int print(int input,int sum){
+        public static void print(int sum){
+            
+            System.out.println("The super factorial is equal to "+sum);
         
         }//close second method
     
