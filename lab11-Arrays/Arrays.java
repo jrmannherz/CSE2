@@ -83,7 +83,7 @@ class Arrays{
       }
       
       
-    System.out.println("Please enter an integer >=0: ");
+    System.out.println("Please enter an integer above 0: ");
     Scanner myScanner = new Scanner(System.in);
     
     if(myScanner.hasNextInt()){
@@ -115,45 +115,98 @@ class Arrays{
             
             
           }
-          else {
-            System.out.println("You did not enter a integer >=0");
+          }
+          else if(s<0) {
+            System.out.println("You did not enter a integer above 0");
             System.exit(0);
           }
       
       
-    } 
+    
     else{
       System.out.println("You did not enter an integer");
       System.exit(0);
     }
+  }
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+  
     
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    for(int l = 0;l<array1.length; l++){
-    System.out.println(array1[l]);}
-    
-    System.out.println("The min is: "+ min);
-    System.out.println("The max is: "+max);
+    System.out.println("The min of array 1 is: "+ min);
+    System.out.println("The max of array 1 is: "+max);
 
-for(int l = 0;l<array2.length; l++){
-    System.out.println(array2[l]);}
+    System.out.println("The min array 2 is: "+ min2);
+    System.out.println("The max array 2 is: "+max2);
     
-    System.out.println("The min is: "+ min2);
-    System.out.println("The max is: "+max2);
+    
+    
+    
+  System.out.println("Please enter an integer above 0: ");
+  if(myScanner.hasNextInt()){
+  int w = myScanner.nextInt();
+  
+            int low = 0;
+            int high = array2.length - 1;
+            int i = 0;
+            while (high >= low){
+             
+            int mid = (low + high) / 2;
+            if(w < array2[mid] ){
+                high = mid -1;
+                i++;
+            }
+            else if(w == array2[mid]){
+            i++;
+            System.out.println("The grade "+w+" was found");
+            System.exit(0);
+            
+                
+            }
+            
+            else{
+            i++;    
+            low = mid + 1;}
+            }
+            
+            System.out.println("The number "+w+" was not found.");
+            System.out.println("The number above the key "+high );
+            System.out.println("The number below the key was "+low);
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  }
+  else{
+    System.exit(0);
+  }
+  
+  
+    
+    
 
 
 
   }
   
 }
+
