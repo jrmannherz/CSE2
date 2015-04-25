@@ -3,15 +3,31 @@ import java.util.Random;
 
 class Study{
   public static void main(String[] args){
-  
-  Random x = new Random();
-      int y = x.nextInt(10);
-      int w = -(x.nextInt(10));
-      int z = x.nextInt(2);
- 
- System.out.print(z+" "+w+" "+y);
- 
+     int x[]={1, 2, 4, 6};
+     double [] u={3, 4, 5, 6, 7}, v={2, 4, 5};
+
+System.out.println(enigma(u,v,x));
+
+System.out.println(enigma(v,u,x));
+
+
+   
   }
+   
+  public static int enigma(double x[], double y[],int z[]){
+        double []temp;
+        temp=x;
+        temp[z[2]]=42.0;
+        y=x;
+        y[0]=2.34;
+        return z[z[0]];
+    }
+
+
+  
+  
+  
+  
  
 }
     
