@@ -13,7 +13,7 @@ that have array parameters.
 import java.util.Random;
 import java.util.Scanner;
 
-class Multiply{
+public class Multiply{
   public static void main(String[] args){
   
     
