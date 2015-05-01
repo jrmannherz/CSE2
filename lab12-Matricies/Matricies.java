@@ -115,7 +115,7 @@ class Matricies{
   
     
     for(int i = 0; i<array.length;i++){
-      for(int j = 0; j<array[i].length; j++){
+      for(int j = 0; j<array[i].length-1; j++){
         transpose[i][j]= array[j][i];
       }
     }
@@ -127,14 +127,65 @@ class Matricies{
     
   }
   
-  public static int[][] addMatrix( int[][] a, boolean formata, int[][] b, boolean formatb)
+  public static int[][] addMatrix( int[][] a, boolean formata, int[][] b, boolean formatb){
+    
+  int height1, height2, width1, width2;
+  int [][] ab = a;
+  int [][] ba = b;
+  if(formata == true){
+    height1 = a.length;
+    width1 = a[0].length;
+  }
+  else{
+    height1=a[0].length;
+    width1=a.length;
+    ab = translate(a,a[0].length);
+  }
+  
+  if(formatb == true){
+    height2 = b.length;
+    width2 = b[0].length;
+  }
+  else{
+    height2=b[0].length;
+    width2=b.length;
+    ba = translate(b,b[0].length);
+  }
+    
+  if(height1 != height2 || width1 != width2){
+    System.out.println("The arrays cannot be added");
+    return null;
+  }  
+  
+  int [][] array = new int [height1][width1];
+  for(int i = 0; i< a.length; i++){
+    for(int j =0; j< a[i].length;j++){
+      array[i][j]=ab[i][j]+ba[i][j];
+    }
+  }
+    
+    
+  printMatrix1(array);  
+   return array; 
+  }
   
   
   
   
-
+ public static void printMatrix1( int[][] array){
+   
+   System.out.println("The added Matrix is: ");
+   for (int i = 0; i < array.length; i++){
+      for (int j = 0; j < array[i].length; j++){
+        System.out.print(" "+array[i][j]);
+      }
+            System.out.println();
+          }
+   
   
+      }
   
+ 
   
   
   
